@@ -1,0 +1,5 @@
+rootProject.name = 'APT'
+include 'annotation'
+include 'processor'
+include 'sample'
+
