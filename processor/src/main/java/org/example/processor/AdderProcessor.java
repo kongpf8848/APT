@@ -21,7 +21,6 @@ public class AdderProcessor extends AbstractProcessor {
 
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        System.out.println("++++++++++++AdderProcessor process++++++++++");
         for (Element element : roundEnv.getElementsAnnotatedWith(Adder.class)) {
             if (element.getKind() != ElementKind.METHOD) {
                 continue;
@@ -32,9 +31,7 @@ public class AdderProcessor extends AbstractProcessor {
 
             int num1 = adder.num1();
             int num2 = adder.num2();
-            System.out.println("++++++++++++AdderProcessor num1:" + num1 + ",num2:" + num2);
             String className = ((TypeElement) method.getEnclosingElement()).getQualifiedName().toString();
-            System.out.println("++++++++++++AdderProcessor className:" + className + ",methodName:" + method.getKind());
             generateCode(className + "Gen", method.getSimpleName().toString(), num1, num2);
         }
         return true;

@@ -17,6 +17,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation project(':annotation')
     annotationProcessor project(':processor')
+    implementation 'com.squareup:javapoet:1.13.0'
 }
 
 test {
